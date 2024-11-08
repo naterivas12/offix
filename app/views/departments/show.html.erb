@@ -1,0 +1,8 @@
+<div class="flex flex-column gap-4">
+  <h1 class="heading"><%=@department.name%></h1>
+  <p><%=@department.description%></p>
+  <%=link_to "New Employee", new_department_employee_path(@department), class: "button button--secondary button--sm fit-content"%>
+  <%@department.employees.each do |employee|%>
+    <%=render employee%>
+  <%end%>
+</div>
